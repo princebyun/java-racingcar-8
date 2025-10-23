@@ -3,7 +3,7 @@ package racingcar;
 public class Validation {
 
 
-    public void nameCheck(String userInputText) {
+    public boolean nameCheck(String userInputText) {
         String[] userInputArray = userInputText.split(",");
         for (int i = 0; i < userInputArray.length; i++) {
             userInputArray[i] = userInputArray[i].trim();
@@ -12,7 +12,7 @@ public class Validation {
             }
 
         }
-
+        return true;
     }
 
 }

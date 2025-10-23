@@ -10,8 +10,6 @@ import org.junit.jupiter.api.Test;
 
 class CarTest {
 
-    private Car car;
-
     @BeforeEach
     void setUp() {
         System.out.println("자동차 클래스 테스트 준비");

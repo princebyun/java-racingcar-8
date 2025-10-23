@@ -46,6 +46,8 @@ validation 클래스
 
 cars 클래스
 -List<car> : 경주에 참가하는 자동차 목록
+-userInputArray : 사용자 입력값 구분자로 나누기
+-userInputSaveCollection : 구분자로 나눠진 자동차를 컬렉션에 저장
 
 racing 클래스
 -runningNumber : 경주횟수
@@ -61,5 +63,5 @@ racingOutput 클래스
 
 [기능구현을 하면서 생각난 리팩토링 할 목록 정리]
 
-1. 같은이름이 2개 이상있을 경우 에러로 처리
+1. 같은이름이 2개 이상있을 경우 에러로 처리(stream으로 처리해보자)
 2. 
