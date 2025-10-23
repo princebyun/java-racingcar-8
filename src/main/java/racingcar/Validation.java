@@ -15,4 +15,15 @@ public class Validation {
         return true;
     }
 
+    public boolean runningNumberCheck(String userInputText) {
+        try {
+            int userInputNumber = Integer.parseInt(userInputText);
+            if (userInputNumber < 0) {
+                throw new IllegalArgumentException();
+            }
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException();
+        }
+        return true;
+    }
 }
