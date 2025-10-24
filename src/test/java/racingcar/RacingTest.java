@@ -37,11 +37,12 @@ class RacingTest {
         list.add(car1);
         list.add(car2);
         list.add(car3);
-        List<Car> list2 = racing.running(list);
+
+        racing.running(list);
 
         assertThat(list).isNotEmpty();
         assertThat(racing.getRacingCount()).isEqualTo(5);
-        assertThat(list2.getFirst().getPosition()).isNotEqualTo(list.getFirst().getPosition());
+        assertThat(list.getFirst().getPosition()).isNotEqualTo(0);
     }
 
 

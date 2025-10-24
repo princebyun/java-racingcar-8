@@ -21,7 +21,14 @@ public class Racing {
 
 
     public List<Car> running(List<Car> carsList) {
-      
+        for (int i = 0; i < racingCount; i++) {
+            for (Car car : carsList) {
+                if (getPositionRandomNumber() > 4) {
+                    int position = car.getPosition();
+                    car.setPosition(position + 1);
+                }
+            }
+        }
         return carsList;
     }
 
