@@ -1,5 +1,7 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
 public class Racing {
 
     int racingCount = 0;
@@ -13,8 +15,7 @@ public class Racing {
     }
 
     public int getPositionRandomNumber() {
-
-        return 100;
+        return Randoms.pickNumberInRange(0, 9);
     }
 }
 
