@@ -7,23 +7,34 @@ public class Validation {
         String[] userInputArray = userInputText.split(",");
         for (int i = 0; i < userInputArray.length; i++) {
             userInputArray[i] = userInputArray[i].trim();
-            if (userInputArray[i].isEmpty() || userInputArray[i].length() > 5) {
-                throw new IllegalArgumentException();
-            }
-
+            nameBooleenCheck(userInputArray[i]);
         }
         return true;
     }
 
+
+    public void nameBooleenCheck(String userInputArray) {
+        if (userInputArray.isEmpty() || userInputArray.length() > 5) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+
     public boolean runningNumberCheck(String userInputText) {
         try {
             int userInputNumber = Integer.parseInt(userInputText);
-            if (userInputNumber < 0) {
-                throw new IllegalArgumentException();
-            }
+            negativeNumberCheck(userInputNumber);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException();
         }
         return true;
     }
+
+
+    public void negativeNumberCheck(int userInputNumber) {
+        if (userInputNumber < 0) {
+            throw new IllegalArgumentException();
+        }
+    }
+
 }
