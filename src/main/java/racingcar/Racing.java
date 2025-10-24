@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Racing {
 
+    RacingOutput racingOutput = new RacingOutput();
+
     int racingCount = 0;
 
     public int getRacingCount() {
@@ -28,6 +30,7 @@ public class Racing {
                     car.setPosition(position + 1);
                 }
             }
+            racingOutput.racingRuningOutput(carsList);
         }
         return carsList;
     }

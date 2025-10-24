@@ -28,7 +28,8 @@
 6. 경주를 위한 랜덤수 클래스 생성
 7. 경주 진행 클래스 생성
 8. 경주 진행 출력 클래스 생성
-9. 경주 결과 출력 클래스 생성
+9. 경주 결과 클래스 생성
+10. 경주 결과 출력 클래스 생성
 
 [2주차 미션 개발 구조 정리]
 
@@ -54,6 +55,7 @@ racing 클래스
 -racingCount : 경주횟수
 -running : 자동차 경주 진행
 -getPositionRandomNumber : 랜덤수 출력
+-resultWiners : 우승자 클래스
 
 userInput 클래스
 -carsNameInput : 자동차 이름 입력
