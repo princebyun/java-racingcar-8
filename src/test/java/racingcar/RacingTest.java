@@ -2,6 +2,8 @@ package racingcar;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,7 +15,7 @@ class RacingTest {
 
     @BeforeEach
     void setUp() {
-
+        System.out.println("자동차 경주 테스트 시작");
     }
 
     @Test
@@ -23,9 +25,29 @@ class RacingTest {
         assertThat(number).isBetween(0, 9);
     }
 
+    @Test
+    @DisplayName("자동차 경주 게임 테스트")
+    public void racing_test() {
+        racing.setRacingCount(5);
+
+        List<Car> list = new ArrayList<>();
+        Car car1 = new Car("일번");
+        Car car2 = new Car("이번");
+        Car car3 = new Car("삼번");
+        list.add(car1);
+        list.add(car2);
+        list.add(car3);
+        List<Car> list2 = racing.running(list);
+
+        assertThat(list).isNotEmpty();
+        assertThat(racing.getRacingCount()).isEqualTo(5);
+        assertThat(list2.getFirst().getPosition()).isNotEqualTo(list.getFirst().getPosition());
+    }
+
+
     @AfterEach
     void tearDown() {
-
+        System.out.println("자동차 경주 테스트 완료");
     }
 
 

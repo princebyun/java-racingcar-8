@@ -1,6 +1,7 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import java.util.List;
 
 public class Racing {
 
@@ -17,5 +18,12 @@ public class Racing {
     public int getPositionRandomNumber() {
         return Randoms.pickNumberInRange(0, 9);
     }
+
+
+    public List<Car> running(List<Car> carsList) {
+      
+        return carsList;
+    }
+
 }
 
