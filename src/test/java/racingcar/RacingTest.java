@@ -7,27 +7,26 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class CarsTest {
+class RacingTest {
 
+    Racing racing = new Racing();
 
     @BeforeEach
     void setUp() {
+
     }
 
     @Test
-    @DisplayName("자동차 리스트 저장 테스트")
-    public void car_list_save_test() {
-        String userText = "가,나,다,라";
-
-        Cars cars = new Cars();
-
-        cars.setCars(cars.userInputSaveCollection(cars.userInputArray(userText)));
-
-        assertThat(cars.getCars().size()).isEqualTo(4);
+    @DisplayName("랜덤수 출력 테스트 케이스")
+    public void random_number_create_test() {
+        int number = racing.getPositionRandomNumber();
+        assertThat(number).isBetween(0, 9);
     }
-
 
     @AfterEach
     void tearDown() {
+
     }
+
+
 }

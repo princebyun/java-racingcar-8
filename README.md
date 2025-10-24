@@ -50,8 +50,9 @@ cars 클래스
 -userInputSaveCollection : 구분자로 나눠진 자동차를 컬렉션에 저장
 
 racing 클래스
--runningNumber : 경주횟수
--positionRandomNumber : 랜덤수 출력
+-racingCount : 경주횟수
+-running : 자동차 경주 진행
+-getPositionRandomNumber : 랜덤수 출력
 
 userInput 클래스
 -carsNameInput : 자동차 이름 입력
