@@ -1,6 +1,7 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import java.util.Comparator;
 import java.util.List;
 
 public class Racing {
@@ -36,8 +37,16 @@ public class Racing {
     }
 
 
-    public String resultWiners(List<Car> carsList) {
-        return "";
+    public StringBuilder resultWiners(List<Car> carsList) {
+        carsList.sort(Comparator.comparingInt(Car::getPosition));
+        int maxPosition = carsList.getFirst().getPosition();
+        StringBuilder winners = new StringBuilder();
+        for (Car car : carsList) {
+            if (car.getPosition() == maxPosition) {
+                winners.append(",");
+            }
+        }
+        return winners;
     }
 }
 
