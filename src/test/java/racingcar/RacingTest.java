@@ -45,6 +45,25 @@ class RacingTest {
         assertThat(list.getFirst().getPosition()).isNotEqualTo(0);
     }
 
+    @Test
+    @DisplayName("자동차 경주 위너 테스트")
+    public void racing_winner_test() {
+        racing.setRacingCount(5);
+
+        List<Car> list = new ArrayList<>();
+        Car car1 = new Car("일번");
+        Car car2 = new Car("이번");
+        Car car3 = new Car("삼번");
+        list.add(car1);
+        list.add(car2);
+        list.add(car3);
+
+        racing.running(list);
+
+        String winner = racing.resultWiners(list);
+
+        assertThat(winner).isNotEmpty();
+    }
 
     @AfterEach
     void tearDown() {
