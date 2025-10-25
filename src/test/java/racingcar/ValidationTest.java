@@ -25,6 +25,13 @@ class ValidationTest {
     }
 
     @Test
+    @DisplayName("사용자 자동차 이름 중복 테스트")
+    public void user_input_car_name_duplication_test() {
+        assertThatThrownBy(() -> validation.nameCheck("가,가,다,라"))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
     @DisplayName("사용자 자동차 이름 빈값 입력 테스트")
     public void user_input_car_name_empty_test() {
         assertThatThrownBy(() -> validation.nameCheck(""))
