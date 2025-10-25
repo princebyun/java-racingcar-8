@@ -60,8 +60,8 @@ class RacingTest {
 
         racing.running(list);
 
-        String winner = String.valueOf(racing.resultWiners(list));
-
+        String winner = racing.resultWiners(list);
+        System.out.println(winner);
         assertThat(winner).isNotEmpty();
     }
 

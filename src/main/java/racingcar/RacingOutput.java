@@ -18,4 +18,9 @@ public class RacingOutput {
     }
 
 
+    public void racingResultOutput(String result) {
+        System.out.println("최종 우승자 : " + result);
+    }
+
+
 }

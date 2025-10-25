@@ -37,13 +37,19 @@ public class Racing {
     }
 
 
-    public StringBuilder resultWiners(List<Car> carsList) {
-        carsList.sort(Comparator.comparingInt(Car::getPosition));
+    public String resultWiners(List<Car> carsList) {
+        carsList.sort(Comparator.comparingInt(Car::getPosition).reversed());
         int maxPosition = carsList.getFirst().getPosition();
-        StringBuilder winners = new StringBuilder();
+        String winners = "";
         for (Car car : carsList) {
             if (car.getPosition() == maxPosition) {
-                winners.append(",");
+                if (winners.isEmpty()) {
+                    winners = car.getName();
+                    continue;
+                }
+                if (!winners.isEmpty()) {
+                    winners += "," + car.getName();
+                }
             }
         }
         return winners;
