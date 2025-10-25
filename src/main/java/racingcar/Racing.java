@@ -24,6 +24,8 @@ public class Racing {
 
 
     public List<Car> running(List<Car> carsList) {
+        System.out.println();
+        System.out.println("실행 결과");
         for (int i = 0; i < racingCount; i++) {
             for (Car car : carsList) {
                 if (getPositionRandomNumber() > 4) {
