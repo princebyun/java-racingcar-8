@@ -66,6 +66,29 @@ racingOutput 클래스
 -racingRuningOuput : 경주 진행 출력
 -racingResultOutput : 경주 우승자 출력
 
+```
+java-racingcar-8/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │       ├── racingcar/
+│   │           ├── Application.java
+│   │           ├── Car.java
+│   │           ├── Cars.java
+│   │           ├── Racing.java
+│   │           ├── RacingOutput.java
+│   │           ├── UserInput.java
+│   │           └── Validation.java
+│   ├── test/
+│       ├── java/
+│           ├── racingcar/
+│               ├── ApplicationTest.java
+│               ├── CarTest.java
+│               ├── CarsTest.java
+│               ├── RacingTest.java
+│               └── ValidationTest.java
+```
+
 [기능구현을 하면서 생각난 리팩토링 할 목록 정리]
 
 1. 같은이름이 2개 이상있을 경우 에러로 처리
