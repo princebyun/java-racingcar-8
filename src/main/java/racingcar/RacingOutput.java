@@ -4,7 +4,7 @@ import java.util.List;
 
 public class RacingOutput {
 
-    public void racingRuningOutput(List<Car> cars, int num) {
+    public void racingRunningOutput(List<Car> cars, int num) {
         if (num == 0) {
             System.out.println();
             System.out.println("실행 결과");

@@ -33,13 +33,13 @@ public class Racing {
     public List<Car> running(List<Car> carsList) {
         for (int i = 0; i < racingCount; i++) {
             carsList = runningPositionMove(carsList);
-            racingOutput.racingRuningOutput(carsList, i);
+            racingOutput.racingRunningOutput(carsList, i);
         }
         return carsList;
     }
 
 
-    public String resultWiners(List<Car> carsList) {
+    public String resultWinners(List<Car> carsList) {
         int maxPosition = carsList.stream()
                 .mapToInt(Car::getPosition)
                 .max()

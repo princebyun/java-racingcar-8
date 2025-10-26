@@ -59,7 +59,7 @@ class RacingTest {
 
         racing.running(list);
 
-        String winner = racing.resultWiners(list);
+        String winner = racing.resultWinners(list);
         System.out.println(winner);
         assertThat(winner).isNotEmpty();
     }
