@@ -8,15 +8,19 @@ public class RacingOutput {
         for (Car car : cars) {
             String name = car.getName();
             int position = car.getPosition();
-            StringBuilder carPosition = new StringBuilder();
-            for (int i = 1; i <= position; i++) {
-                carPosition.append("-");
-            }
-            System.out.println(name + " : " + carPosition);
+            System.out.println(name + " : " + positionAppend(position));
         }
         System.out.println();
     }
 
+
+    public StringBuilder positionAppend(int position) {
+        StringBuilder carPosition = new StringBuilder();
+        for (int i = 0; i < position; i++) {
+            carPosition.append("-");
+        }
+        return carPosition;
+    }
 
     public void racingResultOutput(String result) {
         System.out.println("최종 우승자 : " + result);
