@@ -10,9 +10,7 @@ public class RacingOutput {
             System.out.println("실행 결과");
         }
         for (Car car : cars) {
-            String name = car.getName();
-            int position = car.getPosition();
-            System.out.println(name + " : " + positionAppend(position));
+            System.out.println(car.getName() + " : " + positionAppend(car.getPosition()));
         }
         System.out.println();
     }
