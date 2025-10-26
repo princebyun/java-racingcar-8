@@ -5,17 +5,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Racing {
-
+    private static final int MOVE_STANDARD = 4;
     RacingOutput racingOutput = new RacingOutput();
+    Validation validation = new Validation();
+    private int racingCount = 0;
 
-    int racingCount = 0;
-
-    public int getRacingCount() {
-        return racingCount;
-    }
-
-    public void setRacingCount(int racingCount) {
-        this.racingCount = racingCount;
+    public Racing(String count) {
+        validation.runningNumberCheck(count);
+        racingCount = Integer.parseInt(count);
     }
 
     public int getPositionRandomNumber() {
@@ -25,9 +22,8 @@ public class Racing {
 
     public List<Car> runningPositionMove(List<Car> carsList) {
         for (Car car : carsList) {
-            if (getPositionRandomNumber() >= 4) {
-                int position = car.getPosition();
-                car.setPosition(position + 1);
+            if (getPositionRandomNumber() >= MOVE_STANDARD) {
+                car.positionMove();
             }
         }
         return carsList;
@@ -35,11 +31,9 @@ public class Racing {
 
 
     public List<Car> running(List<Car> carsList) {
-        System.out.println();
-        System.out.println("실행 결과");
         for (int i = 0; i < racingCount; i++) {
             carsList = runningPositionMove(carsList);
-            racingOutput.racingRuningOutput(carsList);
+            racingOutput.racingRuningOutput(carsList, i);
         }
         return carsList;
     }

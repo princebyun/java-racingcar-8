@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 
 class RacingTest {
 
-    Racing racing = new Racing();
 
     @BeforeEach
     void setUp() {
@@ -21,6 +20,7 @@ class RacingTest {
     @Test
     @DisplayName("랜덤수 출력 테스트 케이스")
     public void random_number_create_test() {
+        Racing racing = new Racing("5");
         int number = racing.getPositionRandomNumber();
         assertThat(number).isBetween(0, 9);
     }
@@ -28,7 +28,7 @@ class RacingTest {
     @Test
     @DisplayName("자동차 경주 게임 테스트")
     public void racing_test() {
-        racing.setRacingCount(5);
+        Racing racing = new Racing("5");
 
         List<Car> list = new ArrayList<>();
         Car car1 = new Car("일번");
@@ -41,14 +41,13 @@ class RacingTest {
         racing.running(list);
 
         assertThat(list).isNotEmpty();
-        assertThat(racing.getRacingCount()).isEqualTo(5);
         assertThat(list.getFirst().getPosition()).isNotEqualTo(0);
     }
 
     @Test
     @DisplayName("자동차 경주 위너 테스트")
     public void racing_winner_test() {
-        racing.setRacingCount(5);
+        Racing racing = new Racing("5");
 
         List<Car> list = new ArrayList<>();
         Car car1 = new Car("일번");

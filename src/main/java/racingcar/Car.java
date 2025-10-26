@@ -1,11 +1,15 @@
 package racingcar;
 
 public class Car {
-    String name;
-    int position;
+    private String name;
+    private int position;
+
+    Validation validation = new Validation();
+
 
     public Car(String name) {
-        this.name = name;
+        validation.nameBooleenCheck(name);
+        this.name = name.trim();
         this.position = 0;
     }
 
@@ -17,7 +21,7 @@ public class Car {
         return position;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void positionMove() {
+        this.position++;
     }
 }

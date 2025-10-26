@@ -19,9 +19,7 @@ class CarsTest {
     public void car_list_save_test() {
         String userText = "가,나,다,라";
 
-        Cars cars = new Cars();
-
-        cars.userInputSaveCollection(cars.userInputArray(userText));
+        Cars cars = new Cars(userText);
 
         assertThat(cars.getCars().size()).isEqualTo(4);
     }

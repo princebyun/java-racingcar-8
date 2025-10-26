@@ -20,21 +20,25 @@ class ValidationTest {
     @Test
     @DisplayName("사용자 자동차 이름 글자수 초과 테스트")
     public void user_input_car_name_count_test() {
-        assertThatThrownBy(() -> validation.nameCheck("가머머머머머멈머머머,나,다,라"))
+        String testName = "가머머머머머멈머머머";
+        assertThatThrownBy(() -> validation.nameBooleenCheck(testName))
                 .isInstanceOf(IllegalArgumentException.class);
+
     }
 
     @Test
     @DisplayName("사용자 자동차 이름 중복 테스트")
     public void user_input_car_name_duplication_test() {
-        assertThatThrownBy(() -> validation.nameCheck("가,가,다,라"))
+        String testName = "가,가,다,라";
+        String[] textNameArray = testName.split(",");
+        assertThatThrownBy(() -> validation.duplicationCheck(textNameArray))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     @DisplayName("사용자 자동차 이름 빈값 입력 테스트")
     public void user_input_car_name_empty_test() {
-        assertThatThrownBy(() -> validation.nameCheck(""))
+        assertThatThrownBy(() -> validation.nameBooleenCheck(""))
                 .isInstanceOf(IllegalArgumentException.class);
 
     }
@@ -42,7 +46,12 @@ class ValidationTest {
     @Test
     @DisplayName("사용자 자동자 이름 통과 테스트")
     public void user_input_car_name_ok_test() {
-        assertThatCode(() -> validation.nameCheck("가,나,다,라")).doesNotThrowAnyException();
+        String testName = "가,나,다,라";
+        String[] textNameArray = testName.split(",");
+        for (String textName : textNameArray) {
+            assertThatCode(() -> validation.nameBooleenCheck(textName))
+                    .doesNotThrowAnyException();
+        }
     }
 
     @Test
