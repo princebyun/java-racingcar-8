@@ -6,11 +6,10 @@ import java.util.Set;
 public class Validation {
 
 
-    public boolean nameCheck(String userInputText) {
+    public void nameCheck(String userInputText) {
         String[] userInputArray = userInputText.split(",");
         nameBooleenCheck(userInputArray);
         duplicationCheck(userInputArray);
-        return true;
     }
 
 
@@ -34,14 +33,13 @@ public class Validation {
     }
 
 
-    public boolean runningNumberCheck(String userInputText) {
+    public void runningNumberCheck(String userInputText) {
         try {
             int userInputNumber = Integer.parseInt(userInputText);
             negativeNumberCheck(userInputNumber);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException();
         }
-        return true;
     }
 
 

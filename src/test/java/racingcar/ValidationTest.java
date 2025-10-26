@@ -1,6 +1,6 @@
 package racingcar;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.AfterEach;
@@ -42,7 +42,7 @@ class ValidationTest {
     @Test
     @DisplayName("사용자 자동자 이름 통과 테스트")
     public void user_input_car_name_ok_test() {
-        assertThat(validation.nameCheck("가,나,다,라")).isTrue();
+        assertThatCode(() -> validation.nameCheck("가,나,다,라")).doesNotThrowAnyException();
     }
 
     @Test
@@ -69,7 +69,7 @@ class ValidationTest {
     @Test
     @DisplayName("경주 횟수 통과 테스트")
     public void user_input_racing_ok_test() {
-        assertThat(validation.runningNumberCheck("5")).isTrue();
+        assertThatCode(() -> validation.runningNumberCheck("5")).doesNotThrowAnyException();
     }
 
     @AfterEach

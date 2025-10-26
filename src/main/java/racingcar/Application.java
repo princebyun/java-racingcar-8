@@ -14,16 +14,14 @@ public class Application {
 
         String carsNmae = userInput.carsNameInput();
 
-        if (validation.nameCheck(carsNmae)) {
-            String[] userInputArray = cars.userInputArray(carsNmae);
-            cars.userInputSaveCollection(userInputArray);
-        }
+        validation.nameCheck(carsNmae);
+        String[] userInputArray = cars.userInputArray(carsNmae);
+        cars.userInputSaveCollection(userInputArray);
 
         String racingCount = userInput.racinRoundInput();
 
-        if (validation.runningNumberCheck(racingCount)) {
-            racing.setRacingCount(Integer.parseInt(racingCount));
-        }
+        validation.runningNumberCheck(racingCount);
+        racing.setRacingCount(Integer.parseInt(racingCount));
 
         List<Car> carList = racing.running(cars.getCars());
 

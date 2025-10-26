@@ -71,3 +71,4 @@ racingOutput 클래스
 1. 같은이름이 2개 이상있을 경우 에러로 처리
 2. 중구난방으로 되어 있는 코드 역할 다시 확인하기(예를들면 deoth가 2까지 인지 확인)
 3. userInputSaveCollection void로 리팩토링
+4. 불필요한 소스코드 리팩토링
