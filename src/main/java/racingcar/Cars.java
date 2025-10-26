@@ -1,9 +1,10 @@
 package racingcar;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cars {
-    private List<Car> cars;
+    private List<Car> cars = new ArrayList<>();
 
     Validation validation = new Validation();
 
@@ -15,7 +16,7 @@ public class Cars {
         String[] userInputArray = userInputText.split(",");
         validation.duplicationCheck(userInputArray);
         for (String car : userInputArray) {
-            cars.add(new Car(car));
+            this.cars.add(new Car(car));
         }
     }
 

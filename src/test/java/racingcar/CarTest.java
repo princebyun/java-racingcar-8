@@ -18,7 +18,7 @@ class CarTest {
     @Test
     @DisplayName("자동차클래스 객체 생성 테스트")
     void car_create_test() {
-        String name = "princebyun";
+        String name = "이름";
 
         Car car1 = new Car(name);
 
@@ -29,7 +29,7 @@ class CarTest {
     @Test
     @DisplayName("자동차 클래스 객체 생성 실패 테스트")
     void car_create_test_false() {
-        String name = "princebyun";
+        String name = "이름";
 
         Car car1 = new Car(name);
 
