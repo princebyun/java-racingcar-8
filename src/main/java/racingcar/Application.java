@@ -16,7 +16,7 @@ public class Application {
 
         if (validation.nameCheck(carsNmae)) {
             String[] userInputArray = cars.userInputArray(carsNmae);
-            cars.setCars(cars.userInputSaveCollection(userInputArray));
+            cars.userInputSaveCollection(userInputArray);
         }
 
         String racingCount = userInput.racinRoundInput();

@@ -21,7 +21,7 @@ class CarsTest {
 
         Cars cars = new Cars();
 
-        cars.setCars(cars.userInputSaveCollection(cars.userInputArray(userText)));
+        cars.userInputSaveCollection(cars.userInputArray(userText));
 
         assertThat(cars.getCars().size()).isEqualTo(4);
     }

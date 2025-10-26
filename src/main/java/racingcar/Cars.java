@@ -10,20 +10,16 @@ public class Cars {
         return cars;
     }
 
-    public void setCars(List<Car> cars) {
-        this.cars = cars;
-    }
-
     public String[] userInputArray(String userInputText) {
         return userInputText.split(",");
     }
 
-    public List<Car> userInputSaveCollection(String[] userInputArray) {
+    public void userInputSaveCollection(String[] userInputArray) {
         List<Car> cars = new ArrayList<>();
         for (int i = 0; i < userInputArray.length; i++) {
             cars.add(new Car(userInputArray[i]));
         }
-        return cars;
+        this.cars = cars;
     }
 
 
