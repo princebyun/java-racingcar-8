@@ -23,16 +23,22 @@ public class Racing {
     }
 
 
+    public List<Car> runningPositionMove(List<Car> carsList) {
+        for (Car car : carsList) {
+            if (getPositionRandomNumber() >= 4) {
+                int position = car.getPosition();
+                car.setPosition(position + 1);
+            }
+        }
+        return carsList;
+    }
+
+
     public List<Car> running(List<Car> carsList) {
         System.out.println();
         System.out.println("실행 결과");
         for (int i = 0; i < racingCount; i++) {
-            for (Car car : carsList) {
-                if (getPositionRandomNumber() >= 4) {
-                    int position = car.getPosition();
-                    car.setPosition(position + 1);
-                }
-            }
+            carsList = runningPositionMove(carsList);
             racingOutput.racingRuningOutput(carsList);
         }
         return carsList;
