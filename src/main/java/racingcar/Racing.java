@@ -1,8 +1,8 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.Randoms;
-import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Racing {
 
@@ -46,20 +46,19 @@ public class Racing {
 
 
     public String resultWiners(List<Car> carsList) {
-        carsList.sort(Comparator.comparingInt(Car::getPosition).reversed());
-        int maxPosition = carsList.getFirst().getPosition();
-        String winners = "";
-        for (Car car : carsList) {
-            if (car.getPosition() == maxPosition) {
-                if (winners.isEmpty()) {
-                    winners = car.getName();
-                    continue;
-                }
-                if (!winners.isEmpty()) {
-                    winners += "," + car.getName();
-                }
-            }
-        }
+        int maxPosition = carsList.stream()
+                .mapToInt(Car::getPosition)
+                .max()
+                .getAsInt();
+
+        List<Car> winnersList = carsList.stream()
+                .filter(car -> car.getPosition() == maxPosition)
+                .collect(Collectors.toList());
+
+        String winners = winnersList.stream()
+                .map(Car::getName)
+                .collect(Collectors.joining(","));
+
         return winners;
     }
 }
